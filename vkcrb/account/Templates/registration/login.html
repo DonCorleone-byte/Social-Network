@@ -3,7 +3,7 @@
 {% block title %}Авторизация{% endblock %}
 
 {% block content %}
-    <h1>Авторизация</h1>
+    <!--<h1>Авторизация</h1>
     {% if form.errors %}
         <p>Ваш логин и пароль не совпали, попробуйте снова</p>
     {% else %}
@@ -15,6 +15,36 @@
             {% csrf_token %}
             <input type="hidden" name="next" value="{{ next }}" />
             <p><input type="submit" value="Авторизация"></p>
+            <p class="mt-5 mb-3 text-muted">© 2021 Umovist Maxim</p>
         </form>
-    </div>
+    </div>-->
+
+<body class="text-center">
+<main class="form-signin">
+  <form>
+    <img class="mb-4" src="/vkcrb/account/image/vkcrb.png" alt="logo" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">Авторизация</h1>
+    {% if form.errors %}
+        <p>Ваш логин и пароль не совпали, попробуйте снова</p>
+    {% else %}
+        <p>Пожалуйста, используйте следующую форму для входа в систему:</p>
+     {% endif %}
+
+             <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+             <input type="username" id="inputUsername" class="form-control" placeholder="Введите логин" required="" autofocus="">
+
+             <input type="password" id="inputPassword" class="form-control" placeholder="Введите пароль" required="">
+                <input type="hidden" name="next" value="{{ next }}">
+             <div class="checkbox mb-3">
+               <label>
+                  <input type="checkbox" value="remember-me"> Запомнить меня
+               </label>
+             </div>
+                  <button class="w-100 btn btn-lg btn-primary" type="submit" value="Login">Войти</button>
+                  <p class="mt-5 mb-3 text-muted">© 2021 Umovist Maxim</p>
+            </form>
+  </form>
+</main>
+</body>
 {% endblock %}
