@@ -12,6 +12,7 @@
                 <input type="hidden" name="next" value="{{ next }}">
                 {{ form|crispy }}
                 <button type="submit" class="btn btn-primary btn-block">Войти</button>
+                    <p class="text-center"> <a href="{% url "password_reset" %}">Забыл пароль</a></p>
                 </form>
             </div>
     </div>
