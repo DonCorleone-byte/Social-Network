@@ -116,3 +116,10 @@ LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = "pkcrb@bk.ru"
+EMAIL_HOST_PASSWORD = "defender0609"
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
