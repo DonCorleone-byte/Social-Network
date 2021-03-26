@@ -41,7 +41,7 @@ def register(request):
                 user_form.cleaned_data['password'])
             # Сохраняем пользователя в базе данных.
             new_user.save()
-            # Создание
+            # Создание.
             Profile.objects.create(user=new_user)
             return render(request,
                           'account/register_done.html',
