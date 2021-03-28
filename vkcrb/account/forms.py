@@ -1,8 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, ButtonHolder, Submit,Field
-from crispy_forms.bootstrap import FormActions
+from .models import Profile
+
 
 class LoginForm(forms.Form):
     username = forms.CharField()
@@ -24,3 +23,11 @@ class UserRegistrationForm(forms.ModelForm):
             raise forms.ValidationError('Пароли не совпадают.')
         return cd['password2']
 
+class UserEditForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')
+class ProfileEditForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('date_of_birth', 'photo')

@@ -1,4 +1,4 @@
-
+import os
 
 from pathlib import Path
 
@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,13 @@ EMAIL_HOST_USER = "pkcrb@bk.ru"
 EMAIL_HOST_PASSWORD = "defender0609"
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.google.GoogleOAuth2',
+]
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '737562432927-oeohq2m7oekvbkkeh6ghnrsgovdvj68r.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'KO6lU2Rwobtm7uFRo8QQIX1Y'
