@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'social_django',
     'sorl.thumbnail',
+    'blog.apps.BlogConfig'
 ]
 
 MIDDLEWARE = [
